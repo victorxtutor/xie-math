@@ -852,7 +852,46 @@ footer{background:#42204F!important}
       <button class="signup-submit" id="xieSubmitBtn" type="submit"><span>送出試聽預約</span><i>→</i></button>
       <div class="form-success" id="xieFormSuccess">已收到資料，我們會盡快與您聯繫確認。</div>
       <small>送出即表示同意由課程顧問聯繫確認試聽資訊。</small>
-    </form>
+    </form><script>
+document.getElementById('xieSignupForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const btn = document.getElementById('xieSubmitBtn');
+  const success = document.getElementById('xieFormSuccess');
+
+  const endpoint =
+    'https://script.google.com/macros/s/AKfycbz6WdqRjBc6qQpYqSOlDNs8_qc-tt_e1_jCKcHycqAICNR9wUUX3YetW7sO4w-82Qb9Og/exec';
+
+  const data = new FormData(form);
+
+  const note = data.get('note') || '';
+  const detail = data.get('detail') || '';
+
+  data.set('note', detail ? note + '｜' + detail : note);
+  data.delete('detail');
+
+  btn.disabled = true;
+  btn.querySelector('span').textContent = '送出中…';
+
+  try {
+    await fetch(endpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(data)
+    });
+
+    success.classList.add('show');
+    form.reset();
+
+  } catch (error) {
+    alert('送出失敗，請稍後再試。');
+  } finally {
+    btn.disabled = false;
+    btn.querySelector('span').textContent = '送出試聽預約';
+  }
+});
+</script>
   </div>
 </section>
 
