@@ -2161,6 +2161,21 @@ document.getElementById('xieSignupForm').addEventListener('submit', async functi
 
 
 
+<style id="trial-float-desktop-restore-v6">
+@media (min-width:801px){
+  body .trial-float{
+    right:94px!important;
+    bottom:26px!important;
+    z-index:130!important;
+  }
+  body .trial-float.is-visible{
+    opacity:1!important;
+    transform:translateY(0)!important;
+    pointer-events:auto!important;
+  }
+}
+</style>
+
 <style id="trial-float-mobile-scroll-v7">
 @media (max-width:800px){
   body .trial-float{
@@ -2194,35 +2209,45 @@ document.getElementById('xieSignupForm').addEventListener('submit', async functi
   cta.classList.remove('is-visible','scroll-show','float-active','mobile-scroll-show');
   var lastY=window.pageYOffset||document.documentElement.scrollTop||0;
   var hideTimer=null, ticking=false, touchY=null;
-  function hide(){cta.classList.remove('mobile-scroll-show');}
-  function show(){
-    if((window.pageYOffset||0)<100){hide();return;}
+
+  function isMobile(){ return window.matchMedia('(max-width:800px)').matches; }
+  function hideMobile(){ cta.classList.remove('mobile-scroll-show'); }
+  function showMobile(){
+    if((window.pageYOffset||0)<100){hideMobile();return;}
     cta.classList.add('mobile-scroll-show');
     clearTimeout(hideTimer);
-    hideTimer=setTimeout(hide,5200);
+    hideTimer=setTimeout(hideMobile,5200);
+  }
+  function syncDesktop(){
+    if(isMobile()){ cta.classList.remove('is-visible'); return; }
+    clearTimeout(hideTimer);
+    hideMobile();
+    var y=window.pageYOffset||document.documentElement.scrollTop||0;
+    cta.classList.toggle('is-visible', y>120);
   }
   function evaluate(){
     ticking=false;
-    if(!window.matchMedia('(max-width:800px)').matches){hide();return;}
+    if(!isMobile()){ syncDesktop(); lastY=window.pageYOffset||0; return; }
+    cta.classList.remove('is-visible');
     var y=window.pageYOffset||document.documentElement.scrollTop||0;
     var dy=y-lastY;
-    if(y<100) hide();
-    else if(dy>2) show();
-    else if(dy<-2) hide();
+    if(y<100) hideMobile();
+    else if(dy>2) showMobile();
+    else if(dy<-2) hideMobile();
     lastY=y;
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(evaluate);}}
   window.addEventListener('scroll',onScroll,{passive:true});
   document.addEventListener('touchstart',function(e){if(e.touches&&e.touches[0]) touchY=e.touches[0].clientY;},{passive:true});
   document.addEventListener('touchmove',function(e){
-    if(!e.touches||!e.touches[0]||touchY===null) return;
+    if(!isMobile()||!e.touches||!e.touches[0]||touchY===null) return;
     var now=e.touches[0].clientY, fingerDelta=now-touchY;
-    if((window.pageYOffset||0)>100){if(fingerDelta<-3) show(); else if(fingerDelta>3) hide();}
+    if((window.pageYOffset||0)>100){if(fingerDelta<-3) showMobile(); else if(fingerDelta>3) hideMobile();}
     touchY=now;
   },{passive:true});
-  window.addEventListener('pageshow',function(){lastY=window.pageYOffset||0;hide();});
-  window.addEventListener('resize',hide);
-  hide();
+  window.addEventListener('pageshow',function(){lastY=window.pageYOffset||0; if(isMobile()) hideMobile(); else syncDesktop();});
+  window.addEventListener('resize',function(){lastY=window.pageYOffset||0; if(isMobile()){cta.classList.remove('is-visible');hideMobile();} else syncDesktop();});
+  if(isMobile()) hideMobile(); else syncDesktop();
 })();
 </script>
 
