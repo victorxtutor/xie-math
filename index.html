@@ -120,6 +120,27 @@ footer{padding:24px 0;background:#4D3D59;color:rgba(255,255,255,.55);font-size:9
  .cta h2{font-size:31px}
  .cta .btn{margin-top:24px}
 }
+
+/* 2026-09-04 試聽禮遇：純文字、低調高級，不使用品牌圖示 */
+.trial-perk{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  margin:-4px 0 24px;padding:13px 16px;
+  border-top:1px solid rgba(92,72,107,.16);
+  border-bottom:1px solid rgba(92,72,107,.16);
+  background:rgba(255,255,255,.22);
+}
+.trial-perk span{
+  font-size:9px;letter-spacing:.18em;color:#8A758F;white-space:nowrap;
+}
+.trial-perk strong{
+  font-size:13px;font-weight:600;letter-spacing:.05em;color:#4F3C5D;
+}
+@media(max-width:760px){
+  .trial-perk{margin:-2px 0 22px;padding:12px 2px;background:transparent;gap:12px}
+  .trial-perk span{font-size:8px}
+  .trial-perk strong{font-size:12px;letter-spacing:.03em;text-align:right}
+}
+
 </style>
 
 <style>
@@ -1821,6 +1842,178 @@ footer{background:#4F2E5B!important;padding:25px 0!important}
 }
 </style>
 
+
+<style id="trial-gold-final">
+:root{
+  --trial-gold:#C7A15A;
+  --trial-gold-soft:#E7D3A9;
+  --trial-ink:#2B2530;
+  --trial-warm:#FBF8F3;
+  --trial-line:rgba(113,87,49,.20);
+}
+
+/* 試聽區最終金色高級版 */
+.signup{
+  background:
+    radial-gradient(circle at 8% 22%, rgba(199,161,90,.10), transparent 22%),
+    radial-gradient(circle at 88% 18%, rgba(118,80,138,.06), transparent 24%),
+    linear-gradient(180deg,#FCFAF6 0%, #F7F2EA 100%) !important;
+}
+.signup-shell{
+  align-items:start !important;
+}
+.signup-copy h2,
+.form-top strong{
+  font-family:"Noto Serif TC","Songti TC",serif;
+  color:var(--trial-ink) !important;
+}
+.signup-copy h2 em{color:#7A5A85 !important;}
+.signup-copy>p{color:#6F666D !important;}
+.signup-points,
+.signup-points span{border-color:var(--trial-line) !important;}
+.signup-points span{color:#9E7D43 !important;}
+.signup-points b{color:#3B313F !important;}
+
+.signup-form{
+  position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,252,247,.98) 100%) !important;
+  border:1px solid rgba(199,161,90,.28) !important;
+  border-radius:30px !important;
+  box-shadow:0 28px 80px rgba(76,56,82,.10), 0 2px 0 rgba(255,255,255,.9) inset !important;
+  overflow:hidden;
+}
+.signup-form::before{
+  content:"";
+  position:absolute;inset:0 0 auto 0;height:4px;
+  background:linear-gradient(90deg, rgba(199,161,90,0), rgba(199,161,90,.92), rgba(199,161,90,0));
+}
+.form-top{
+  justify-content:flex-start !important;
+  align-items:flex-start !important;
+  border-bottom:0 !important;
+  padding-bottom:0 !important;
+  margin-bottom:10px !important;
+}
+.form-top strong{
+  font-size:38px !important;
+  letter-spacing:-.02em !important;
+}
+
+.trial-perk{
+  display:inline-flex !important;
+  width:auto !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:0 !important;
+  margin:0 0 28px !important;
+  padding:9px 16px !important;
+  border:1px solid rgba(199,161,90,.38) !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg, rgba(246,240,227,.92) 0%, rgba(255,255,255,.96) 100%) !important;
+  box-shadow:0 10px 22px rgba(137,111,63,.08) !important;
+}
+.trial-perk span{
+  font-size:10px !important;
+  letter-spacing:.12em !important;
+  color:#B18C4D !important;
+  white-space:nowrap;
+}
+.trial-perk strong{
+  font-size:15px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em !important;
+  color:#5D4770 !important;
+  display:block;
+}
+.signup-form label{
+  color:#665E66 !important;
+  font-size:12px !important;
+  margin-bottom:24px !important;
+}
+.signup-form input,
+.signup-form select,
+.signup-form textarea{
+  border-bottom:1px solid rgba(87,68,102,.18) !important;
+  padding:12px 2px 14px !important;
+  font-size:15px !important;
+  color:#2B2530 !important;
+}
+.signup-form input::placeholder,
+.signup-form textarea::placeholder{color:#B1A8AF !important;}
+.signup-form input:focus,
+.signup-form select:focus,
+.signup-form textarea:focus{
+  border-bottom-color:#B78D44 !important;
+  box-shadow:0 1px 0 0 rgba(183,141,68,.35) !important;
+}
+.form-row{gap:24px !important;}
+.signup-submit{
+  margin-top:18px !important;
+  height:58px !important;
+  background:linear-gradient(135deg, #7B4C90 0%, #5C3A6C 100%) !important;
+  border:1px solid rgba(199,161,90,.35) !important;
+  box-shadow:0 18px 35px rgba(92,58,108,.20) !important;
+}
+.signup-submit span{font-size:13px !important;font-weight:700 !important;}
+.signup-submit i{font-size:19px !important;}
+.signup-form small{margin-top:15px !important;color:#948B92 !important;}
+
+@media (min-width:801px){
+  .signup{padding:120px 0 !important;}
+  .signup-shell{grid-template-columns:.86fr 1.14fr !important;gap:88px !important;}
+  .signup-copy{padding-top:10px !important;}
+  .signup-copy h2{font-size:48px !important;line-height:1.48 !important;}
+  .signup-form{padding:44px 42px !important;}
+}
+
+@media (max-width:800px){
+  .signup-form{border-radius:22px !important;padding:28px 22px !important;}
+  .form-top strong{font-size:28px !important;}
+  .trial-perk{
+    display:inline-flex !important;
+    margin:0 0 24px !important;
+    padding:8px 12px !important;
+    gap:8px !important;
+  }
+  .trial-perk span{font-size:8px !important;}
+  .trial-perk strong{font-size:12px !important;}
+  .signup-form label{font-size:11px !important;margin-bottom:18px !important;}
+  .signup-form input,.signup-form select,.signup-form textarea{font-size:14px !important;}
+}
+</style>
+
+
+<style id="starbucks-pill-gold-only">
+/* 只改「試聽享有星巴克大杯」這顆按鈕；其他全站配色維持原本 */
+.trial-perk{
+  display:inline-flex !important;
+  width:auto !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin:0 0 28px !important;
+  padding:9px 16px !important;
+  border:1px solid rgba(177,139,71,.42) !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,#FBF6EA 0%,#F4E8CF 100%) !important;
+  box-shadow:0 6px 16px rgba(156,121,57,.08) !important;
+}
+.trial-perk strong{
+  color:#8D6B32 !important;
+  font-size:14px !important;
+  font-weight:700 !important;
+  letter-spacing:.02em !important;
+}
+@media(max-width:800px){
+  .trial-perk{
+    margin:0 0 22px !important;
+    padding:8px 13px !important;
+  }
+  .trial-perk strong{
+    font-size:12px !important;
+  }
+}
+</style>
+
 </head><body>
 <nav><div class="wrap"><div class="brand">解創智數學</div><div class="navright"><span>VICTOR+ 得勝者文教</span><a href="#apex">APEX 巔峰班</a><a class="navbtn" href="#signup">預約試聽</a></div></div></nav>
 
@@ -1984,6 +2177,10 @@ footer{background:#4F2E5B!important;padding:25px 0!important}
 
     <form class="signup-form" id="xieSignupForm">
       <div class="form-top"><strong>預約試聽</strong></div>
+      <div class="trial-perk" aria-label="到班試聽享有星巴克大杯">
+        <span>試聽禮遇</span>
+        <strong>完成到班試聽，享大杯星巴克</strong>
+      </div>
       <label>學生姓名<input type="text" name="studentName" placeholder="請輸入姓名" required></label>
       <div class="form-row">
         <label>家長姓名<input type="text" name="parentName" placeholder="請輸入家長姓名"></label>
@@ -2161,21 +2358,6 @@ document.getElementById('xieSignupForm').addEventListener('submit', async functi
 
 
 
-<style id="trial-float-desktop-restore-v6">
-@media (min-width:801px){
-  body .trial-float{
-    right:94px!important;
-    bottom:26px!important;
-    z-index:130!important;
-  }
-  body .trial-float.is-visible{
-    opacity:1!important;
-    transform:translateY(0)!important;
-    pointer-events:auto!important;
-  }
-}
-</style>
-
 <style id="trial-float-mobile-scroll-v7">
 @media (max-width:800px){
   body .trial-float{
@@ -2209,73 +2391,37 @@ document.getElementById('xieSignupForm').addEventListener('submit', async functi
   cta.classList.remove('is-visible','scroll-show','float-active','mobile-scroll-show');
   var lastY=window.pageYOffset||document.documentElement.scrollTop||0;
   var hideTimer=null, ticking=false, touchY=null;
-
-  function isMobile(){ return window.matchMedia('(max-width:800px)').matches; }
-  function hideMobile(){ cta.classList.remove('mobile-scroll-show'); }
-  function showMobile(){
-    if((window.pageYOffset||0)<100){hideMobile();return;}
+  function hide(){cta.classList.remove('mobile-scroll-show');}
+  function show(){
+    if((window.pageYOffset||0)<100){hide();return;}
     cta.classList.add('mobile-scroll-show');
     clearTimeout(hideTimer);
-    hideTimer=setTimeout(hideMobile,5200);
-  }
-  function syncDesktop(){
-    if(isMobile()){ cta.classList.remove('is-visible'); return; }
-    clearTimeout(hideTimer);
-    hideMobile();
-    var y=window.pageYOffset||document.documentElement.scrollTop||0;
-    cta.classList.toggle('is-visible', y>120);
+    hideTimer=setTimeout(hide,5200);
   }
   function evaluate(){
     ticking=false;
-    if(!isMobile()){ syncDesktop(); lastY=window.pageYOffset||0; return; }
-    cta.classList.remove('is-visible');
+    if(!window.matchMedia('(max-width:800px)').matches){hide();return;}
     var y=window.pageYOffset||document.documentElement.scrollTop||0;
     var dy=y-lastY;
-    if(y<100) hideMobile();
-    else if(dy>2) showMobile();
-    else if(dy<-2) hideMobile();
+    if(y<100) hide();
+    else if(dy>2) show();
+    else if(dy<-2) hide();
     lastY=y;
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(evaluate);}}
   window.addEventListener('scroll',onScroll,{passive:true});
   document.addEventListener('touchstart',function(e){if(e.touches&&e.touches[0]) touchY=e.touches[0].clientY;},{passive:true});
   document.addEventListener('touchmove',function(e){
-    if(!isMobile()||!e.touches||!e.touches[0]||touchY===null) return;
+    if(!e.touches||!e.touches[0]||touchY===null) return;
     var now=e.touches[0].clientY, fingerDelta=now-touchY;
-    if((window.pageYOffset||0)>100){if(fingerDelta<-3) showMobile(); else if(fingerDelta>3) hideMobile();}
+    if((window.pageYOffset||0)>100){if(fingerDelta<-3) show(); else if(fingerDelta>3) hide();}
     touchY=now;
   },{passive:true});
-  window.addEventListener('pageshow',function(){lastY=window.pageYOffset||0; if(isMobile()) hideMobile(); else syncDesktop();});
-  window.addEventListener('resize',function(){lastY=window.pageYOffset||0; if(isMobile()){cta.classList.remove('is-visible');hideMobile();} else syncDesktop();});
-  if(isMobile()) hideMobile(); else syncDesktop();
+  window.addEventListener('pageshow',function(){lastY=window.pageYOffset||0;hide();});
+  window.addEventListener('resize',hide);
+  hide();
 })();
 </script>
-
-<style id="signup-brand-final-v3">
-/* SIGNUP FINAL — quiet luxury, consistent with hero */
-@media(max-width:800px){
-  .signup{padding:62px 0 76px!important;background:linear-gradient(180deg,#fdfbf8 0%,#faf5f7 100%)!important;}
-  .signup-shell{padding:0 18px!important;}
-  .signup-copy{margin-bottom:24px!important;}
-  .signup-kicker{font-size:10px!important;letter-spacing:.14em!important;margin-bottom:12px!important;}
-  .signup-copy h2{font-size:29px!important;line-height:1.38!important;letter-spacing:-.035em!important;margin:0!important;}
-  .signup-copy h2 em{font-style:normal!important;color:#70417f!important;}
-  .signup-copy>p{font-size:12.5px!important;line-height:1.9!important;margin-top:14px!important;color:#777078!important;}
-  .signup-points{margin-top:18px!important;gap:6px!important;}
-  .signup-points span{font-size:10px!important;padding:8px 10px!important;border-radius:999px!important;background:rgba(255,255,255,.56)!important;}
-  .signup-form{padding:25px 20px 22px!important;border-radius:24px!important;background:rgba(255,255,255,.78)!important;border:1px solid rgba(187,153,88,.22)!important;box-shadow:0 18px 46px rgba(65,44,70,.065)!important;}
-  .form-top{padding:0 0 15px!important;margin:0 0 4px!important;border-bottom:1px solid rgba(47,39,49,.075)!important;}
-  .form-top strong{font-size:21px!important;line-height:1.25!important;font-weight:650!important;letter-spacing:-.025em!important;color:#2e2930!important;}
-  .signup-form label{font-size:11px!important;line-height:1.3!important;font-weight:550!important;color:#777078!important;margin-top:15px!important;letter-spacing:.02em!important;}
-  .signup-form input,.signup-form select,.signup-form textarea{font-size:16px!important;font-weight:450!important;color:#29252b!important;margin-top:3px!important;padding:7px 1px 8px!important;height:43px!important;min-height:43px!important;border-bottom:1px solid rgba(52,44,54,.13)!important;}
-  .signup-form textarea{height:67px!important;min-height:67px!important;padding-top:9px!important;}
-  .signup-form input::placeholder,.signup-form textarea::placeholder{font-size:14px!important;font-weight:400!important;color:#b1abb1!important;}
-  .signup-form select{font-size:15px!important;font-weight:450!important;color:#4b454d!important;}
-  .signup-submit{height:50px!important;margin-top:22px!important;padding:0 8px 0 20px!important;border-radius:999px!important;font-size:13px!important;font-weight:700!important;letter-spacing:.02em!important;box-shadow:0 11px 25px rgba(75,40,87,.14)!important;}
-  .signup-submit i{width:34px!important;height:34px!important;flex:0 0 34px!important;font-size:17px!important;}
-  .signup-form small{font-size:9.5px!important;line-height:1.6!important;margin-top:10px!important;color:#aaa4aa!important;}
-}
-</style>
 </body></html>
 <style>
 .teacher-head{grid-template-columns:1fr;gap:0}
@@ -2343,115 +2489,259 @@ document.getElementById('xieSignupForm').addEventListener('submit', async functi
   }
 </style>
 
-<style id="signup-final-luxury-v2">
-/* FINAL — 試聽表單：輕、精緻、品牌一致 */
-.signup{background:linear-gradient(180deg,#fdfaf8 0%,#fbf6f8 100%)!important;}
-.signup-form{background:rgba(255,255,255,.9)!important;border:1px solid rgba(193,157,91,.24)!important;box-shadow:0 24px 70px rgba(72,47,77,.07)!important;}
-.form-top{justify-content:flex-start!important;border-bottom:1px solid rgba(42,35,43,.08)!important;}
-.form-top strong{font-family:"Noto Sans TC",sans-serif!important;font-weight:700!important;letter-spacing:-.035em!important;color:#272329!important;}
-.signup-form label{font-family:"Noto Sans TC",sans-serif!important;font-weight:500!important;color:#625c64!important;letter-spacing:.01em!important;}
-.signup-form input,.signup-form select,.signup-form textarea{font-family:"Noto Sans TC",sans-serif!important;font-weight:450!important;color:#272329!important;background:transparent!important;border:0!important;border-bottom:1px solid rgba(56,47,58,.16)!important;border-radius:0!important;box-shadow:none!important;}
-.signup-form select{font-weight:500!important;}
-.signup-form input:focus,.signup-form select:focus,.signup-form textarea:focus{outline:none!important;border-bottom-color:#754786!important;box-shadow:0 1px 0 #754786!important;}
-.signup-submit{background:linear-gradient(110deg,#754887 0%,#60366f 100%)!important;border:1px solid rgba(213,185,128,.45)!important;box-shadow:0 14px 30px rgba(75,40,87,.15)!important;font-family:"Noto Sans TC",sans-serif!important;}
-.signup-submit:hover{transform:translateY(-2px)!important;box-shadow:0 19px 36px rgba(75,40,87,.22)!important;}
-@media(max-width:800px){
-  .signup{padding:72px 0 82px!important;}
-  .signup-shell{padding:0 18px!important;}
-  .signup-copy{margin-bottom:26px!important;}
-  .signup-form{padding:30px 24px 26px!important;border-radius:28px!important;}
-  .form-top{padding:0 0 20px!important;margin-bottom:6px!important;}
-  .form-top strong{font-size:30px!important;line-height:1.2!important;}
-  .signup-form label{display:block!important;font-size:12px!important;line-height:1.4!important;margin-top:18px!important;}
-  .signup-form .form-row{display:block!important;}
-  .signup-form input,.signup-form select,.signup-form textarea{width:100%!important;min-height:48px!important;height:48px!important;padding:9px 2px 10px!important;margin-top:5px!important;font-size:16px!important;line-height:1.45!important;}
-  .signup-form textarea{height:76px!important;min-height:76px!important;padding-top:10px!important;resize:vertical!important;}
-  .signup-form input::placeholder,.signup-form textarea::placeholder{font-size:15px!important;color:#aaa4aa!important;font-weight:400!important;}
-  .signup-form select{font-size:16px!important;}
-  .signup-submit{height:54px!important;margin-top:26px!important;border-radius:999px!important;padding:0 18px 0 22px!important;font-size:15px!important;font-weight:650!important;}
-  .signup-submit i{width:34px!important;height:34px!important;display:grid!important;place-items:center!important;border:1px solid rgba(255,255,255,.28)!important;border-radius:50%!important;font-size:19px!important;}
-  .signup-form small{display:block!important;text-align:center!important;margin:12px 8px 0!important;font-size:10px!important;line-height:1.65!important;color:#aaa4aa!important;}
+<style id="trial-perk-mobile-refine-20260904">
+/* 試聽禮遇：手機版改為安靜、簡潔的文字標籤 */
+.form-top{justify-content:flex-start!important;border-bottom:0!important;padding-bottom:8px!important;margin-bottom:8px!important;}
+.trial-perk{
+  width:max-content!important;max-width:100%!important;
+  display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:8px!important;
+  margin:0 0 18px!important;padding:7px 11px!important;
+  border:1px solid rgba(91,62,104,.14)!important;border-radius:999px!important;
+  background:#FAF7FB!important;
+}
+.trial-perk span{font-size:9px!important;letter-spacing:.08em!important;color:#8C7B91!important;}
+.trial-perk span:after{content:"·";margin-left:8px;color:#B6A8BA;}
+.trial-perk strong{font-size:11px!important;font-weight:650!important;letter-spacing:.015em!important;color:#5C4267!important;text-align:left!important;}
+@media(max-width:720px){
+  .form-top{padding-bottom:5px!important;margin-bottom:6px!important;}
+  .form-top strong{font-size:25px!important;}
+  .trial-perk{margin:0 0 12px!important;padding:6px 10px!important;}
+  .trial-perk span{font-size:8px!important;}
+  .trial-perk strong{font-size:10.5px!important;}
 }
 </style>
-<style id="signup-editorial-premium-v3">
-/* 預約區 FINAL v3 — editorial / boutique, not backend-form */
-@media(max-width:800px){
-  .signup{padding:62px 0 76px!important;background:linear-gradient(180deg,#fcf8f6 0%,#fffdfb 46%,#faf5f8 100%)!important;}
-  .signup-shell{padding:0 20px!important;}
-  .signup-copy{margin:0 0 30px!important;}
-  .signup-kicker{font-size:10px!important;letter-spacing:.18em!important;font-weight:750!important;color:#744483!important;margin-bottom:15px!important;}
-  .signup-copy h2{font-family:"Noto Serif TC","Songti TC",serif!important;font-size:31px!important;line-height:1.55!important;font-weight:700!important;letter-spacing:-.045em!important;color:#272329!important;margin:0!important;}
-  .signup-copy h2 em{display:block!important;margin-top:5px!important;color:#71417f!important;font-style:normal!important;font-weight:700!important;}
-  .signup-copy p{font-size:13px!important;line-height:1.9!important;color:#7d767d!important;margin:20px 0 0!important;}
-  .signup-points{margin-top:24px!important;border-top:1px solid rgba(183,151,91,.20)!important;}
-  .signup-points span{min-height:48px!important;padding:0 14px!important;border-bottom:1px solid rgba(183,151,91,.18)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font-size:10px!important;color:#b08a50!important;}
-  .signup-points span b{font-size:13px!important;font-weight:650!important;color:#383239!important;letter-spacing:.01em!important;}
 
-  .signup-form{position:relative!important;padding:25px 22px 24px!important;border-radius:24px!important;background:rgba(255,255,255,.86)!important;border:1px solid rgba(190,157,91,.20)!important;box-shadow:0 18px 48px rgba(75,48,79,.055)!important;overflow:hidden!important;}
-  .signup-form:before{content:""!important;position:absolute!important;left:22px!important;top:0!important;width:46px!important;height:2px!important;background:linear-gradient(90deg,#754786,#c8a86a)!important;border-radius:99px!important;}
-  .form-top{padding:0 0 16px!important;margin:0 0 2px!important;border-bottom:1px solid rgba(49,40,50,.075)!important;}
-  .form-top strong{font-family:"Noto Serif TC","Songti TC",serif!important;font-size:24px!important;line-height:1.3!important;font-weight:700!important;letter-spacing:-.04em!important;color:#2a252b!important;}
-  .signup-form label{font-size:11px!important;font-weight:600!important;line-height:1.35!important;color:#716a72!important;margin-top:17px!important;letter-spacing:.035em!important;}
-  .signup-form input,.signup-form select,.signup-form textarea{min-height:42px!important;height:42px!important;margin-top:2px!important;padding:7px 0 8px!important;font-size:16px!important;font-weight:450!important;color:#29252a!important;border-bottom:1px solid rgba(49,40,50,.13)!important;}
-  .signup-form textarea{height:64px!important;min-height:64px!important;padding-top:10px!important;}
-  .signup-form input::placeholder,.signup-form textarea::placeholder{font-size:14px!important;color:#b4afb3!important;font-weight:400!important;}
-  .signup-form select{font-size:15px!important;font-weight:500!important;color:#403a41!important;}
-  .signup-submit{height:50px!important;margin-top:23px!important;border-radius:15px!important;padding:0 9px 0 18px!important;font-size:14px!important;font-weight:700!important;letter-spacing:.02em!important;background:linear-gradient(105deg,#754786 0%,#62366f 100%)!important;border:1px solid rgba(213,185,128,.42)!important;box-shadow:0 12px 24px rgba(76,41,87,.14)!important;}
-  .signup-submit i{width:32px!important;height:32px!important;font-size:17px!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(240,218,171,.36)!important;}
-  .signup-form small{margin:10px 4px 0!important;font-size:9px!important;line-height:1.55!important;color:#aaa4aa!important;}
-}
-</style>
-<style id="signup-boutique-final-v4">
-/* V4 — 預約區：更安靜、更精品，避免「後台表單」感 */
-@media(max-width:800px){
-  .signup{padding:58px 0 78px!important;background:linear-gradient(180deg,#fdf9f7 0%,#fffdfa 55%,#faf6f8 100%)!important;}
-  .signup-shell{padding:0 24px!important;}
-  .signup-copy{margin:0 0 34px!important;}
-  .signup-kicker{font-size:10px!important;letter-spacing:.20em!important;margin:0 0 18px!important;color:#784786!important;}
-  .signup-copy h2{font-family:"Noto Sans TC","PingFang TC",sans-serif!important;font-size:28px!important;line-height:1.48!important;font-weight:650!important;letter-spacing:-.045em!important;color:#262227!important;max-width:320px!important;}
-  .signup-copy h2 em{margin-top:6px!important;font-size:30px!important;line-height:1.5!important;font-weight:700!important;color:#744181!important;}
-  .signup-copy p{font-size:13px!important;line-height:1.9!important;margin:18px 0 0!important;color:#817980!important;max-width:330px!important;}
-  .signup-points{margin:27px 0 0!important;border-top:1px solid rgba(184,151,91,.18)!important;}
-  .signup-points span{display:grid!important;grid-template-columns:54px 1fr!important;align-items:center!important;min-height:58px!important;padding:0!important;border-bottom:1px solid rgba(184,151,91,.16)!important;background:none!important;}
-  .signup-points span b{font-size:13px!important;font-weight:600!important;color:#342f35!important;}
 
-  .signup-form{padding:0 20px 24px!important;border-radius:26px!important;background:rgba(255,255,255,.72)!important;border:1px solid rgba(191,158,96,.18)!important;box-shadow:0 22px 60px rgba(74,48,79,.045)!important;backdrop-filter:blur(12px)!important;overflow:hidden!important;}
-  .signup-form:before{display:none!important;}
-  .form-top{position:relative!important;display:block!important;padding:25px 0 19px!important;margin:0 0 2px!important;border-bottom:1px solid rgba(48,39,49,.07)!important;}
-  .form-top:before{content:"預約資料"!important;display:block!important;font-size:9px!important;line-height:1!important;letter-spacing:.16em!important;color:#b18d54!important;margin-bottom:9px!important;}
-  .form-top strong{font-family:"Noto Sans TC","PingFang TC",sans-serif!important;font-size:20px!important;line-height:1.35!important;font-weight:650!important;letter-spacing:-.025em!important;color:#2b272c!important;}
-  .form-top span{display:none!important;}
-  .signup-form label{font-size:10.5px!important;line-height:1.35!important;font-weight:550!important;letter-spacing:.05em!important;color:#777077!important;margin:16px 0 0!important;}
-  .signup-form input,.signup-form select,.signup-form textarea{height:40px!important;min-height:40px!important;margin-top:1px!important;padding:7px 0 8px!important;font-size:16px!important;font-weight:430!important;color:#2c282d!important;border-bottom:1px solid rgba(50,41,51,.115)!important;}
-  .signup-form textarea{height:60px!important;min-height:60px!important;padding-top:9px!important;}
-  .signup-form input::placeholder,.signup-form textarea::placeholder{font-size:13.5px!important;color:#bbb5ba!important;font-weight:400!important;}
-  .signup-form select{font-size:14px!important;font-weight:480!important;color:#4d474e!important;}
-  .signup-submit{height:48px!important;margin-top:22px!important;border-radius:999px!important;padding:0 8px 0 19px!important;font-size:13px!important;font-weight:650!important;letter-spacing:.025em!important;background:linear-gradient(105deg,#754785 0%,#63376f 100%)!important;border:1px solid rgba(213,185,128,.40)!important;box-shadow:0 11px 24px rgba(76,41,87,.13)!important;}
-  .signup-submit i{width:31px!important;height:31px!important;font-size:16px!important;border-color:rgba(238,215,167,.34)!important;background:rgba(255,255,255,.06)!important;}
-  .signup-form small{font-size:8.5px!important;line-height:1.55!important;margin:10px 3px 0!important;color:#aaa4aa!important;}
+<style id="trial-perk-gold-absolute-final">
+.trial-perk{
+  width:max-content!important;
+  max-width:100%!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:0!important;
+  margin:0 0 18px!important;
+  padding:7px 13px!important;
+  border:1px solid rgba(181,143,72,.38)!important;
+  border-radius:999px!important;
+  background:linear-gradient(180deg,#FCF8EF 0%,#F5E9D1 100%)!important;
+  box-shadow:0 5px 14px rgba(154,119,55,.07)!important;
+}
+.trial-perk strong{
+  font-size:11.5px!important;
+  font-weight:700!important;
+  letter-spacing:.015em!important;
+  color:#8A6730!important;
+  text-align:left!important;
+}
+.trial-perk span{display:none!important;}
+@media(max-width:720px){
+  .trial-perk{
+    margin:0 0 12px!important;
+    padding:6px 11px!important;
+  }
+  .trial-perk strong{
+    font-size:10.5px!important;
+  }
 }
 </style>
-<style id="signup-field-spacing-fix-v5">
-@media (max-width:800px){
-  /* 修正欄位文字貼底線：讓標籤、輸入文字、底線都有呼吸感 */
+
+
+<style id="trial-perk-capsule-final-v2">
+/* 只調整這顆試聽膠囊，做成你截圖那種低調金色質感 */
+.trial-perk{
+  position:relative !important;
+  display:inline-flex !important;
+  width:auto !important;
+  max-width:100% !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:14px !important;
+  margin:0 0 18px !important;
+  padding:10px 46px 10px 16px !important;
+  border:1px solid #D6B06A !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,#F7EEDB 0%,#F3E7CC 100%) !important;
+  box-shadow:0 6px 16px rgba(176,136,63,.08) !important;
+}
+.trial-perk::after{
+  content:"✦";
+  position:absolute !important;
+  right:18px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  color:#C29543 !important;
+  font-size:11px !important;
+  line-height:1 !important;
+}
+.trial-perk span{
+  display:inline-block !important;
+  flex:0 0 auto !important;
+  padding-right:14px !important;
+  border-right:1px solid rgba(188,146,70,.48) !important;
+  color:#A57B34 !important;
+  font-size:10.5px !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+  white-space:nowrap !important;
+}
+.trial-perk strong{
+  display:block !important;
+  color:#7D5C26 !important;
+  font-size:13px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em !important;
+  text-align:left !important;
+  white-space:nowrap !important;
+}
+@media(max-width:800px){
+  .trial-perk{
+    margin:0 0 14px !important;
+    padding:8px 34px 8px 12px !important;
+    gap:10px !important;
+  }
+  .trial-perk::after{right:14px !important;font-size:10px !important;}
+  .trial-perk span{
+    font-size:9px !important;
+    padding-right:10px !important;
+  }
+  .trial-perk strong{
+    font-size:11px !important;
+  }
+}
+</style>
+
+
+<style id="signup-mobile-balance-final">
+/* 只優化預約試聽區排版：膠囊再大一點，但整體更順眼 */
+.trial-perk{
+  position:relative !important;
+  display:inline-flex !important;
+  width:auto !important;
+  max-width:100% !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:16px !important;
+  margin:2px 0 20px !important;
+  padding:12px 44px 12px 18px !important;
+  min-height:54px !important;
+  border:1px solid #D4AF67 !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,#F8F0DE 0%, #F3E6CA 100%) !important;
+  box-shadow:0 8px 18px rgba(177,136,57,.08) !important;
+}
+.trial-perk::after{
+  content:"✦" !important;
+  position:absolute !important;
+  right:17px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  color:#C99B44 !important;
+  font-size:10px !important;
+  opacity:.95 !important;
+}
+.trial-perk span{
+  display:inline-block !important;
+  flex:0 0 auto !important;
+  padding-right:16px !important;
+  border-right:1px solid rgba(191,148,70,.46) !important;
+  color:#A57933 !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+  white-space:nowrap !important;
+}
+.trial-perk strong{
+  display:block !important;
+  color:#7D5C26 !important;
+  font-size:14px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em !important;
+  line-height:1.35 !important;
+  white-space:nowrap !important;
+}
+
+@media (min-width:801px){
+  .signup-form{
+    padding:42px 42px 34px !important;
+  }
+  .form-top{
+    margin-bottom:12px !important;
+  }
+  .form-top strong{
+    font-size:34px !important;
+  }
   .signup-form label{
-    margin:18px 0 0!important;
-    line-height:1.5!important;
+    margin-bottom:18px !important;
   }
   .signup-form input,
-  .signup-form select{
-    height:47px!important;
-    min-height:47px!important;
-    margin-top:5px!important;
-    padding:7px 2px 14px!important;
-    line-height:1.45!important;
-  }
+  .signup-form select,
   .signup-form textarea{
-    height:72px!important;
-    min-height:72px!important;
-    margin-top:5px!important;
-    padding:9px 2px 16px!important;
-    line-height:1.65!important;
+    padding:10px 2px 12px !important;
+  }
+}
+
+@media (max-width:800px){
+  .signup{
+    padding:68px 0 86px !important;
+  }
+  .signup-form{
+    padding:24px 18px 22px !important;
+    border-radius:20px !important;
+  }
+  .form-top{
+    margin-bottom:10px !important;
+  }
+  .form-top strong{
+    font-size:27px !important;
+    line-height:1.15 !important;
+  }
+  .trial-perk{
+    display:flex !important;
+    width:100% !important;
+    gap:12px !important;
+    margin:0 0 16px !important;
+    padding:10px 36px 10px 14px !important;
+    min-height:48px !important;
+  }
+  .trial-perk::after{
+    right:14px !important;
+    font-size:9px !important;
+  }
+  .trial-perk span{
+    font-size:9.5px !important;
+    padding-right:12px !important;
+  }
+  .trial-perk strong{
+    font-size:12.5px !important;
+    line-height:1.3 !important;
+    white-space:normal !important;
+  }
+  .signup-form label{
+    font-size:11px !important;
+    margin-bottom:14px !important;
+  }
+  .signup-form input,
+  .signup-form select,
+  .signup-form textarea{
+    margin-top:6px !important;
+    padding:8px 2px 10px !important;
+    font-size:14px !important;
+  }
+  .form-row{
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+  }
+  .signup-form small{
+    margin-top:10px !important;
+  }
+  .line-float{
+    right:12px !important;
+    bottom:78px !important;
+  }
+  .line-bubble{
+    width:48px !important;
+    height:48px !important;
   }
 }
 </style>
